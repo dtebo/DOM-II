@@ -121,20 +121,38 @@ function createOverlay(){
     const mainOverlay = document.createElement("div");
     mainOverlay.className = "main-overlay";
 
+    /* Form */
     const overlayForm = document.createElement("form");
     overlayForm.className = "emailForm";
 
+    /* Form Info */
+    const formInfo = document.createElement("p");
+    formInfo.textContent = "Signup for our Newsletter";
+
+    /* Email Wrapper */
+    const wrapper = document.createElement("section");
+    wrapper.className = "email-wrapper";
+
+    /* Email Label */
     const emailLabel = document.createElement("label");
     emailLabel.textContent = "Email: ";
     emailLabel.setAttribute("for", "email");
 
+    /* Email Input */
     const emailInput = document.createElement("input");
     emailInput.setAttribute("type", "text");
     emailInput.setAttribute("name", "email");
     emailInput.setAttribute("placeholder", "Email Address");
 
-    overlayForm.appendChild(emailLabel);
-    overlayForm.appendChild(emailInput);
+    const submit = document.createElement("button");
+    submit.textContent = "Subscribe";
+    
+    // Append all form elements
+    overlayForm.appendChild(formInfo);
+    wrapper.appendChild(emailLabel);
+    wrapper.appendChild(emailInput);
+    overlayForm.appendChild(wrapper);
+    overlayForm.appendChild(submit);
 
     mainOverlay.appendChild(overlayForm);
 

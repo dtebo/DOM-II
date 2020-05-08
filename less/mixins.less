@@ -10,6 +10,12 @@
           border-radius: @radius;
 }
 
+.box-shadow(@hOffset: 1px, @vOffset: 1px, @blur: 1px, @spread: 1px, @color: black){
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
 .button-creator(@width, @height, @bg-color, @font-color, @font-size) {
   .border-radius(15px);
   .center;
@@ -33,4 +39,12 @@
 
 .text-shadow(@hOffset: 1px, @vOffset: 1px, @blur-radius: 1px, @color: black){
   text-shadow: @arguments;
+}
+
+.padding(@top: 0, @right: 0, @bottom: 0, @left: 0){
+  padding: @arguments;
+}
+
+.margin(@top: 0, @right: 0, @bottom: 0, @left: 0){
+  margin: @arguments;
 }
