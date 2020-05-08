@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Sunshiney';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Sunshiney Regular'), local('Sunshiney-Regular'), url(https://fonts.gstatic.com/s/sunshiney/v10/LDIwapGTLBwsS-wT4vcQFMOs.ttf) format('truetype');
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -233,15 +240,33 @@ img {
   position: relative;
   z-index: 2;
 }
-.home .intro .overlay:after {
-  content: " ";
-  background-color: rgba(77, 77, 77, 0.561);
+.home .intro .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  left: 0;
-  top: 80px;
+  bottom: 155px;
   height: 250px;
   width: 800px;
   z-index: 1;
+}
+.home .intro .overlay p {
+  color: #f6e47f;
+  font-family: 'Sunshiney', cursive;
+  font-size: 6rem;
+  font-weight: 600;
+  text-shadow: 5px 2px 1px #f0c81e;
+  z-index: 3;
+}
+.home .intro .overlay:after {
+  content: " ";
+  background-image: linear-gradient(hsla(300, 20%, 50%, 0.4), 90%, coral);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 250px;
+  width: 800px;
+  z-index: 2;
 }
 .home .intro img {
   max-width: 100%;

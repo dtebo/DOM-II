@@ -42,15 +42,24 @@ dropZone.ondragover = (ev) => {
 
 /* Hover Image Overlay */
 const introOverlay = document.createElement("div");
+const overlayText = document.createElement("p");
 const intro = document.querySelector('.intro');
 const img = document.querySelector('.intro img');
 
-img.onmouseover = (ev) => {
+img.onmouseenter = (ev) => {
+    // Set the class for the overlay
     introOverlay.className = "overlay";
+
+    overlayText.textContent = "Fun in the Sun!";
+
+    // Add the text to the overlay
+    introOverlay.appendChild(overlayText);
+
+    // Add the overlay element to the intro section
     intro.appendChild(introOverlay);
 };
 
-img.onmouseleave = (ev) => {
+introOverlay.onmouseleave = (ev) => {
     // Remove the overlay
     intro.removeChild(introOverlay);
 };
