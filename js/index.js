@@ -10,18 +10,18 @@ draggableItems.forEach((item) => {
     item.setAttribute('draggable', true);
 
     // Grab the element information for transfer to the drop zone
-    item.ondragstart = (ev) => {
+    item.addEventListener('dragstart', (ev) => {
         source = ev.target;
 
         ev.dataTransfer.setData("text/plain", ev.target.innerHTML);
         ev.dataTransfer.effectAllowed = "move";
-    };
+    });
 });
 
 // Get the drop location
 const dropZone = document.querySelector('.drop-zone');
 
-dropZone.ondrop = (ev) => {
+dropZone.addEventListener('drop', (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
 
@@ -30,14 +30,14 @@ dropZone.ondrop = (ev) => {
 
     const data = ev.dataTransfer.getData("text/plain");
     ev.target.innerHTML = data;
-};
+});
 
 // Allow the dropping of the element
-dropZone.ondragover = (ev) => {
+dropZone.addEventListener('dragover', (ev) => {
     ev.preventDefault();
 
     ev.dataTransfer.dropEffect = "move";
-};
+});
 
 
 /* Hover Image Overlay */
@@ -46,7 +46,7 @@ const overlayText = document.createElement("p");
 const intro = document.querySelector('.intro');
 const img = document.querySelector('.intro img');
 
-img.onmouseover = (ev) => {
+img.addEventListener('mouseover', (ev) => {
     // Set the class for the overlay
     introOverlay.className = "overlay";
 
@@ -57,12 +57,12 @@ img.onmouseover = (ev) => {
 
     // Add the overlay element to the intro section
     intro.appendChild(introOverlay);
-};
+});
 
-introOverlay.onmouseleave = (ev) => {
+introOverlay.addEventListener('mouseleave', (ev) => {
     // Remove the overlay
     intro.removeChild(introOverlay);
-};
+});
 
 /* Keydown */
 window.addEventListener('keydown', (ev) => {
@@ -74,4 +74,9 @@ window.addEventListener('keydown', (ev) => {
         // Yes it was! Log that the user scrolled with the keyboard
         console.log(`The user scrolled with the keyboard! ${key === 38 ? 'User scrolled up' : 'User scrolled down'}`);
     }
+});
+
+/* Mouse Wheel Event */
+window.addEventListener('wheel', (ev) => {
+    console.log(`The user scrolled with the mouse X: ${ev.x} Y: ${ev.y}`);
 });
