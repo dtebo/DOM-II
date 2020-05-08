@@ -114,3 +114,48 @@ document.addEventListener('scroll', (ev) => {
         mainnav.style.height = "70px";
     }
 });
+
+/* Select Event */
+
+function createOverlay(){
+    const mainOverlay = document.createElement("div");
+    mainOverlay.className = "main-overlay";
+
+    const overlayForm = document.createElement("form");
+    overlayForm.className = "emailForm";
+
+    const emailLabel = document.createElement("label");
+    emailLabel.textContent = "Email: ";
+    emailLabel.setAttribute("for", "email");
+
+    const emailInput = document.createElement("input");
+    emailInput.setAttribute("type", "text");
+    emailInput.setAttribute("name", "email");
+    emailInput.setAttribute("placeholder", "Email Address");
+
+    overlayForm.appendChild(emailLabel);
+    overlayForm.appendChild(emailInput);
+
+    mainOverlay.appendChild(overlayForm);
+
+    return mainOverlay;
+}
+
+const signUpBtns = document.querySelectorAll('.btn');
+const ovrly = createOverlay();
+
+signUpBtns.forEach((btn) => {
+    btn.addEventListener('click', (ev) => {
+        // Main Content Area
+        const content = document.querySelector('.home');
+    
+        // Display the overlay
+        content.appendChild(ovrly);
+    });
+});
+
+ovrly.addEventListener('select', (ev) => {
+    const selection = ev.target.value.substring(ev.target.selectionStart, ev.target.selectionEnd);
+
+    console.log(`The following text was selected: ${selection}`);
+});

@@ -235,6 +235,17 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.home .main-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 16%, 0.52);
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 4;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
