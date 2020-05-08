@@ -3,6 +3,21 @@
   .intro {
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
+    position: relative;
+    z-index: 2;
+
+    .overlay{
+      &:after{
+        content: " ";
+        background-color: rgba(77, 77, 77, 0.561);
+        position: absolute;
+        left: 0;
+        top: 80px;
+        height: 250px;
+        width: 800px;
+        z-index: 1;
+      }
+    }
 
     img {
       max-width: 100%;

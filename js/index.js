@@ -1,9 +1,9 @@
 /* Drag and Drop - Thank you to https://syntaxxx.com/rearranging-web-page-items-with-html5-drag-and-drop/ */
 
-let source;
+const source = null;
 
 // Get the elements to drag
-let draggableItems = document.querySelectorAll('.content-section');
+const draggableItems = document.querySelectorAll('.content-section');
 
 // Loop through and make each item and make them draggable
 draggableItems.forEach((item) => {
@@ -19,7 +19,7 @@ draggableItems.forEach((item) => {
 });
 
 // Get the drop location
-let dropZone = document.querySelector('.home');
+const dropZone = document.querySelector('.drop-zone');
 
 dropZone.ondrop = (ev) => {
     ev.preventDefault();
@@ -28,7 +28,7 @@ dropZone.ondrop = (ev) => {
     // The magic happens here! Swap the elements around.
     source.innerHTML = ev.target.innerHTML;
 
-    let data = ev.dataTransfer.getData("text/plain");
+    const data = ev.dataTransfer.getData("text/plain");
     ev.target.innerHTML = data;
 };
 
@@ -37,4 +37,20 @@ dropZone.ondragover = (ev) => {
     ev.preventDefault();
 
     ev.dataTransfer.dropEffect = "move";
+};
+
+
+/* Hover Image Overlay */
+const introOverlay = document.createElement("div");
+const intro = document.querySelector('.intro');
+const img = document.querySelector('.intro img');
+
+img.onmouseover = (ev) => {
+    introOverlay.className = "overlay";
+    intro.appendChild(introOverlay);
+};
+
+img.onmouseleave = (ev) => {
+    // Remove the overlay
+    intro.removeChild(introOverlay);
 };
