@@ -46,7 +46,7 @@ const overlayText = document.createElement("p");
 const intro = document.querySelector('.intro');
 const img = document.querySelector('.intro img');
 
-img.onmouseenter = (ev) => {
+img.onmouseover = (ev) => {
     // Set the class for the overlay
     introOverlay.className = "overlay";
 
@@ -63,3 +63,15 @@ introOverlay.onmouseleave = (ev) => {
     // Remove the overlay
     intro.removeChild(introOverlay);
 };
+
+/* Keydown */
+window.addEventListener('keydown', (ev) => {
+    // Get the key that was pressed
+    const key = ev.which || ev.keyCode;
+
+    // Was the up or down arrow pressed?
+    if(key === 38 || key === 40){
+        // Yes it was! Log that the user scrolled with the keyboard
+        console.log(`The user scrolled with the keyboard! ${key === 38 ? 'User scrolled up' : 'User scrolled down'}`);
+    }
+});
