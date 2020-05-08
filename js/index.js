@@ -80,3 +80,17 @@ window.addEventListener('keydown', (ev) => {
 window.addEventListener('wheel', (ev) => {
     console.log(`The user scrolled with the mouse X: ${ev.x} Y: ${ev.y}`);
 });
+
+/* Load Event */
+window.addEventListener('load', (ev) => {
+    console.log('The page has loaded!');
+});
+
+/* Focus Event */
+const navItems = document.querySelectorAll('nav a');
+
+navItems.forEach((item) => {
+    item.addEventListener('focus', (ev) => {
+        console.log(`${ev.target.textContent} link has focus!`);
+    });
+});
