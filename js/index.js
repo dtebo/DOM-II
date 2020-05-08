@@ -1,6 +1,6 @@
 /* Drag and Drop - Thank you to https://syntaxxx.com/rearranging-web-page-items-with-html5-drag-and-drop/ */
 
-const source = null;
+let source = null;
 
 // Get the elements to drag
 const draggableItems = document.querySelectorAll('.content-section');
@@ -93,4 +93,9 @@ navItems.forEach((item) => {
     item.addEventListener('focus', (ev) => {
         console.log(`${ev.target.textContent} link has focus!`);
     });
+});
+
+/* Resize Event */
+window.addEventListener('resize', (ev) => {
+    console.log('window was resized!');
 });
