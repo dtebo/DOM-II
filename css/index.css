@@ -188,6 +188,7 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
   z-index: 3;
+  transition: height 0.2s ease-in-out;
 }
 .main-navigation .nav-container {
   height: 100%;

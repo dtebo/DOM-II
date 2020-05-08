@@ -99,3 +99,18 @@ navItems.forEach((item) => {
 window.addEventListener('resize', (ev) => {
     console.log('window was resized!');
 });
+
+/* Scroll Event */
+const mainnav = document.querySelector('.main-navigation');
+const originalHeight = mainnav.style.height; /* Original navigation height */
+
+document.addEventListener('scroll', (ev) => {
+    // Shrink the navbar
+    // Are we at the top of the page?
+    if(window.scrollY === 0){
+        mainnav.style.height = originalHeight;
+    }
+    else{
+        mainnav.style.height = "70px";
+    }
+});
