@@ -13,24 +13,35 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  transition: all .2s;
 }
 
 .block--red {
   background-color: red;
+  position: relative;
+  left: 0;
 }
 
 .block--blue {
   background-color: blue;
+  position: relative;
+  left: 0;
 }
 
 .block--green {
   background-color: green;
+  position: relative;
+  left: 0;
 }
 
 .block--pink {
   background-color: pink;
+  position: relative;
+  left: 0;
 }
 
 .block--gray {
   background-color: gray;
+  position: relative;
+  left: 0;
 }
