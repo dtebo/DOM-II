@@ -6,16 +6,7 @@ let timer = 0;
 
 blocks.forEach((b) => {
     b.addEventListener('click', (e) => {
-        e.target.animate([
-            { top: '0px' },
-            { top: '-40px' }
-        ], {
-            duration: 400,
-            fill: "forwards",
-            easing: "linear"
-        });
-
-        // blockContainer.prepend(e.target);
+        blockContainer.prepend(e.target);
     });
 
     b.addEventListener('mousedown', (e) => {
@@ -37,10 +28,6 @@ blocks.forEach((b) => {
 
             b.style.left = numericLeft + 'px';
         }, 100);
-    });
-
-    window.addEventListener('mousedown', (e) => {
-
     });
 
     window.addEventListener('mouseup', (e) => {
