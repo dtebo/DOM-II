@@ -20,6 +20,11 @@ blocks.forEach((b) => {
 
             numericLeft += 20;
 
+            // Has the block reached it's movement limit?
+            if(numericLeft > 400){
+                clearInterval(timer);
+            }
+            
             b.style.left = numericLeft + 'px';
 
             // console.log(left, numericLeft + 'px');
