@@ -47,6 +47,7 @@ const intro = document.querySelector('.intro');
 const img = document.querySelector('.intro img');
 
 img.addEventListener('mouseover', (ev) => {
+
     // Set the class for the overlay
     introOverlay.className = "overlay";
 
@@ -159,14 +160,13 @@ function createOverlay(){
     return mainOverlay;
 }
 
+// Main Content Area
+const content = document.querySelector('.home');
 const signUpBtns = document.querySelectorAll('.btn');
 const ovrly = createOverlay();
 
 signUpBtns.forEach((btn) => {
     btn.addEventListener('click', (ev) => {
-        // Main Content Area
-        const content = document.querySelector('.home');
-    
         // Display the overlay
         content.appendChild(ovrly);
     });
@@ -180,9 +180,26 @@ ovrly.addEventListener('select', (ev) => {
 
 
 /* Double Click Event */
+// Test event propagation
+content.addEventListener('dblclick', (ev) => {
+    content.style.color = "red"; // This was triggered by the double click
+                                 // on the destination section
+});
+
 const dest = document.querySelector('.content-destination');
 
 dest.addEventListener('dblclick', (ev) => {
+    // Stop propagation of this event so that the content section
+    // dblclick event isn't triggered by mistake
+    ev.stopPropagation();
+    
     dest.style.padding = "10px";
     dest.style.border = "1px solid green";
+});
+
+// Prevent page refresh when nav link is clicked
+navItems.forEach((item) => {
+    item.addEventListener('click', (ev) => {
+        ev.preventDefault();
+    });
 });
