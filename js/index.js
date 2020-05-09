@@ -85,6 +85,21 @@ window.addEventListener('wheel', (ev) => {
 /* Load Event */
 window.addEventListener('load', (ev) => {
     console.log('The page has loaded!');
+
+    /* GSAP Animation */
+    gsap.registerPlugin(MotionPathPlugin);
+
+    gsap.to(".img-content:first-child", {
+        motionPath: {
+            path: "#e1",
+            align: "#e1",
+            alignOrigin: [0.5, 0.5],
+            autoRotate: true
+        },
+        transformOrigin: "50% 50%",
+        duration: 2,
+        ease: "power1.inOut"
+    });
 });
 
 /* Focus Event */

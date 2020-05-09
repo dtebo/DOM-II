@@ -369,6 +369,9 @@ img {
     padding: 0;
   }
 }
+.home .content-section .img-content:first-child {
+  z-index: 1000;
+}
 .home .content-section .img-content img {
   border-radius: 10px;
 }
