@@ -6,18 +6,16 @@ let timer = 0;
 
 blocks.forEach((b) => {
     b.addEventListener('click', (e) => {
-        const t = setInterval((e) => {
-            b.animate([
-                // keyframes
-                { transform: 'translateY(0px)' },
-                { transform: 'translateY(-100px)' }
-            ], {
-                // timing
-                duration: 1000
-            });
-        }, 1000);
+        e.target.animate([
+            { top: '0px' },
+            { top: '-40px' }
+        ], {
+            duration: 400,
+            fill: "forwards",
+            easing: "linear"
+        });
 
-        blockContainer.prepend(e.target);
+        // blockContainer.prepend(e.target);
     });
 
     b.addEventListener('mousedown', (e) => {
@@ -41,7 +39,13 @@ blocks.forEach((b) => {
         }, 100);
     });
 
+    window.addEventListener('mousedown', (e) => {
+
+    });
+
     window.addEventListener('mouseup', (e) => {
+        b.style.left = '0px'; // Return the block to its original position
+
         clearInterval(timer);
     });
 });
