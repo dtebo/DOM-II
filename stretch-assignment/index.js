@@ -6,6 +6,17 @@ let timer = 0;
 
 blocks.forEach((b) => {
     b.addEventListener('click', (e) => {
+        const t = setInterval((e) => {
+            b.animate([
+                // keyframes
+                { transform: 'translateY(0px)' },
+                { transform: 'translateY(-100px)' }
+            ], {
+                // timing
+                duration: 1000
+            });
+        }, 1000);
+
         blockContainer.prepend(e.target);
     });
 
@@ -18,17 +29,16 @@ blocks.forEach((b) => {
 
             let numericLeft = parseInt(left); // The numeric value for left
 
-            numericLeft += 20;
+            numericLeft += 50;
 
             // Has the block reached it's movement limit?
             if(numericLeft > 400){
                 clearInterval(timer);
+                return;
             }
-            
-            b.style.left = numericLeft + 'px';
 
-            // console.log(left, numericLeft + 'px');
-        }, 500);
+            b.style.left = numericLeft + 'px';
+        }, 100);
     });
 
     window.addEventListener('mouseup', (e) => {
