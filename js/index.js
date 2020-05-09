@@ -177,3 +177,12 @@ ovrly.addEventListener('select', (ev) => {
 
     console.log(`The following text was selected: ${selection}`);
 });
+
+
+/* Double Click Event */
+const dest = document.querySelector('.content-destination');
+
+dest.addEventListener('dblclick', (ev) => {
+    dest.style.padding = "10px";
+    dest.style.border = "1px solid green";
+});
