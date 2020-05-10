@@ -4,9 +4,17 @@ const blocks = document.querySelectorAll('.block');
 
 let timer = 0;
 
+let counter = -1;
+
 blocks.forEach((b) => {
+    b.style.order = 1; // Set all items to have a default order of 1
+
     b.addEventListener('click', (e) => {
-        blockContainer.prepend(e.target);
+        // Thank you to Jason Duncan for the example
+        counter--;
+
+        // blockContainer.prepend(e.target);
+        b.style.order = counter;
     });
 
     b.addEventListener('mousedown', (e) => {
