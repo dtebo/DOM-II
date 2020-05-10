@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Sunshiney';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Sunshiney Regular'), local('Sunshiney-Regular'), url(https://fonts.gstatic.com/s/sunshiney/v10/LDIwapGTLBwsS-wT4vcQFMOs.ttf) format('truetype');
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -180,6 +187,8 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 6;
+  transition: height 0.2s ease-in-out;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -226,9 +235,106 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.home {
+  position: relative;
+}
+.home .main-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+.home .main-overlay .emailForm {
+  background-color: white;
+  box-shadow: 1px 1px 8px 1px gray;
+  -moz-box-shadow: 1px 1px 8px 1px gray;
+  -webkit-box-shadow: 1px 1px 8px 1px gray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  height: 300px;
+  width: 400px;
+  padding: 20px 20px 20px 20px;
+}
+.home .main-overlay .emailForm p {
+  font-family: 'Roboto', cursive;
+  font-size: 3rem;
+}
+.home .main-overlay .emailForm .email-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0 0;
+}
+.home .main-overlay .emailForm .email-wrapper input {
+  height: 40px;
+  width: 180px;
+  margin: 0 0 0 30px;
+}
+.home .main-overlay .emailForm button {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 50px;
+  background-color: #17A2B8;
+  color: #FFFFFF;
+  border: 1px solid #C0C0C0;
+  cursor: pointer;
+  font-size: 1.8rem;
+  position: relative;
+  top: 30%;
+  left: 70%;
+}
+@media (max-width: 500px) {
+  .home .main-overlay .emailForm button {
+    width: 100%;
+  }
+}
+.home .main-overlay .emailForm button:hover {
+  background: #FFFFFF;
+  color: #17A2B8;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
+  position: relative;
+  z-index: 2;
+}
+.home .intro .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 155px;
+  height: 250px;
+  width: 800px;
+  z-index: 1;
+}
+.home .intro .overlay p {
+  color: #f6e47f;
+  font-family: 'Sunshiney', cursive;
+  font-size: 6rem;
+  font-weight: 600;
+  text-shadow: 5px 2px 1px #f0c81e;
+  z-index: 3;
+}
+.home .intro .overlay:after {
+  content: " ";
+  background-image: linear-gradient(hsla(300, 20%, 50%, 0.4), 90%, coral);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 250px;
+  width: 800px;
+  z-index: 2;
 }
 .home .intro img {
   max-width: 100%;
@@ -263,6 +369,9 @@ img {
     padding: 0;
   }
 }
+.home .content-section .img-content:first-child {
+  z-index: 1000;
+}
 .home .content-section .img-content img {
   border-radius: 10px;
 }
@@ -296,6 +405,7 @@ img {
 .home .content-destination {
   width: 75%;
   margin: 0 auto 30px;
+  transition: all 0.2s ease-in-out;
 }
 @media (max-width: 500px) {
   .home .content-destination {

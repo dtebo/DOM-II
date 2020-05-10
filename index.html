@@ -10,6 +10,8 @@
   <link href="css/index.css" rel="stylesheet">
 
   <script src="js/index.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -29,33 +31,36 @@
       </nav>
     </div>
   </header>
-     
   <div class="container home">
     <header class="intro">
       <img src="img/fun-bus.jpg" alt="bus in the sand">
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
-    <section class="content-section">
-      <div class="text-content">
-        <h2>Let's Go!</h2>
-        <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
-        <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
-      </div>
-      <div class="img-content">
-        <img src="img/adventure.jpg" alt="Let's go on an adventure!">
-      </div>
-    </section>
-    <section class="content-section inverse-content">
-      <div class="img-content">
-          <img src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
-      </div>
-      <div class="text-content">
-        <h2>Adventure Awaits</h2>
-        <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
-        <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
-      </div>
-     
+    <path d="M 50 300 Q 50 750 200 750 L 250 750" stroke="blue"
+    stroke-width="5" fill="none" id="e1"/>
+    <section class="drop-zone">
+      <section class="content-section" id="first-section">
+        <div class="text-content">
+          <h2>Let's Go!</h2>
+          <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
+          <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
+        </div>
+        <div class="img-content">
+          <img src="img/adventure.jpg" alt="Let's go on an adventure!">
+        </div>
+      </section>
+      <section class="content-section inverse-content" id="second-section">
+        <div class="img-content">
+            <img src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
+        </div>
+        <div class="text-content">
+          <h2>Adventure Awaits</h2>
+          <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
+          <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
+        </div>
+       
+      </section>
     </section>
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
